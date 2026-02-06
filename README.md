@@ -70,7 +70,7 @@ Screenshot of results
 Business interpretation
 
 📁 Screenshots available in:
-screenshoot/joins/
+screenshoot/join/
 
 5. Part B — Window Functions Implementation
 
@@ -93,7 +93,7 @@ Output screenshot
 Interpretation
 
 📁 Screenshots available in:
-screenshoot/window_functions/
+screenshoot/windows_function/
 
 6. View Creation
 
@@ -101,7 +101,7 @@ A database view named customer_sales_analysis was created to combine multiple wi
 The view supports customer ranking, running totals, and previous-sale comparison.
 
 📁 Screenshots available in:
-screenshoot/views/
+screenshoot/view/
 
 7. Results Analysis
 Descriptive Analysis
