@@ -44,7 +44,7 @@ sales (sale_id, customer_id, product_id, sale_date, quantity)
 
 Primary and foreign keys enforce relational integrity between customers, products, and sales.
 
-📌 ER Diagram:
+* ER Diagram:
 
 
 4. Part A — SQL JOINs Implementation
@@ -134,4 +134,4 @@ Course lecture materials
 
 10. Integrity Statement
 
-All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation.
+All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation
