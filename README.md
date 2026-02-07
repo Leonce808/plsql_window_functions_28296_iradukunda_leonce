@@ -46,7 +46,7 @@ The project successfully demonstrates:
 The database consists of **three tables**:
 
 ### `customers`
-- `customer_id` (PK)
+- customer_id(PK)
 - `customer_name`
 - `region`
 
