@@ -1,137 +1,171 @@
-SQL JOINs & Window Functions Project
+# SQL JOINs & Window Functions Project
 
-Course: Database Development with PL/SQL (INSY 8311)
-Student: Iradukunda Leonce
-Group: [evening]
-Instructor: Eric Maniraguha
+**Course:** Database Development with PL/SQL (INSY 8311)  
+**Student:** Iradukunda Leonce  
+**Group:** Evening  
+**Instructor:** Eric Maniraguha  
 
-1. Business Problem
-Business Context
+---
 
-The project is based on a retail company operating in the sales industry, focusing on customer transactions and product sales performance.
+# Business Context
+This project is based on a retail company operating in the sales industry.  
+The company manages customer information, products, and sales transactions stored in a relational PostgreSQL database.
 
-Data Challenge
+---
 
-The company needs to analyze customer purchasing behavior, product sales activity, and sales trends over time using relational data stored across multiple tables.
+# Data Challenge
+The company needs to analyze:
+- Customer purchasing behavior  
+- Product sales activity  
+- Sales trends over time  
 
-Expected Outcome
+This analysis is performed using SQL JOINs and Window Functions.
 
-The analysis aims to identify top-performing customers and products, detect inactive records, and support data-driven business decisions through analytical SQL queries.
+---
 
-2. Success Criteria
+## Expected Outcomes
+The project aims to:
+- Identify top-performing customers  
+- Detect customers or products with no sales  
+- Analyze sales trends using analytical SQL queries  
+- Support data-driven decision-making  
 
-The project fulfills the following measurable analytical goals:
+---
 
-Identify ranked customer performance using RANK()
+#Success Criteria
+The project successfully demonstrates:
+- Customer ranking using `RANK()`  
+- Running totals using `SUM() OVER()`  
+- Time-based comparison using `LAG()` and `LEAD()`  
+- Data segmentation using `NTILE()`  
+- Analytical queries using window functions  
 
-Compute running totals using SUM() OVER()
+---
 
-Compare sales across time using LAG() and LEAD()
+# Database Schema
+The database consists of **three tables**:
 
-Segment data into groups using NTILE()
+### `customers`
+- `customer_id` (PK)
+- `customer_name`
+- `region`
 
-Analyze trends using aggregate window functions
+### `products`
+- `product_id` (PK)
+- `product_name`
+- `price`
 
-3. Database Schema & ER Diagram
+### `sales`
+- `sale_id` (PK)
+- `customer_id` (FK)
+- `product_id` (FK)
+- `sale_date`
+- `quantity`
 
-The database consists of three related tables:
+Primary and foreign keys enforce referential integrity between the tables.
 
-customers (customer_id, customer_name, region)
+---
 
-products (product_id, product_name, price)
+# ER Diagram
+The ER diagram illustrates the relationships between customers, products, and sales.
 
-sales (sale_id, customer_id, product_id, sale_date, quantity)
+📁 ER diagram image available in:  
+`screenshots/setup/`
 
-Primary and foreign keys enforce relational integrity between customers, products, and sales.
+---
 
-* ER Diagram:
+# Part A — SQL JOINs
+The following JOINs were implemented:
 
-
-4. Part A — SQL JOINs Implementation
-
-The following JOINs were implemented to analyze relationships across tables:
-
-INNER JOIN to retrieve valid sales transactions
-
-LEFT JOIN to identify customers without sales
-
-RIGHT/FULL JOIN to detect products with no sales activity
-
-FULL OUTER JOIN to compare unmatched customers and products
-
-SELF JOIN to compare customers within the same region
+- **INNER JOIN** – retrieves valid sales transactions  
+- **LEFT JOIN** – identifies customers without sales  
+- **RIGHT JOIN / FULL JOIN** – detects products with no sales  
+- **FULL OUTER JOIN** – compares unmatched customers and products  
+- **SELF JOIN** – compares customers within the same region  
 
 Each JOIN includes:
+- SQL query  
+- Screenshot of the output  
+- Business interpretation  
 
-SQL query
+Screenshots available in:  
+`screenshots/joins/`
 
-Screenshot of results
+---
 
-Business interpretation
+#Part B — Window Functions
+The following window function categories were implemented:
 
-📁 Screenshots available in:
-screenshoot/join/
+### Ranking Functions
+- `ROW_NUMBER()`
+- `RANK()`
+- `DENSE_RANK()`
 
-5. Part B — Window Functions Implementation
+### Aggregate Window Functions
+- `SUM() OVER()`
+- `AVG() OVER()`
 
-All required window function categories were implemented:
+### Navigation Functions
+- `LAG()`
+- `LEAD()`
 
-Ranking Functions: ROW_NUMBER(), RANK(), DENSE_RANK()
-
-Aggregate Functions: SUM() OVER(), AVG() OVER()
-
-Navigation Functions: LAG(), LEAD()
-
-Distribution Functions: NTILE()
+### Distribution Functions
+- `NTILE()`
 
 Each query includes:
+- SQL implementation  
+- Output screenshot  
+- Interpretation  
 
-SQL implementation
+ Screenshots available in:  
+`screenshots/window_functions/`
 
-Output screenshot
+---
 
-Interpretation
+# View Creation
+A view named **`customer_sales_analysis`** was created to combine:
+- Customer ranking  
+- Running sales totals  
+- Previous-sale comparison  
 
-📁 Screenshots available in:
-screenshoot/windows_function/
+This view simplifies analytical queries and improves reusability.
 
-6. View Creation
+Screenshots available in:  
+`screenshots/views/`
 
-A database view named customer_sales_analysis was created to combine multiple window function analyses into a single reusable object.
-The view supports customer ranking, running totals, and previous-sale comparison.
+---
 
-📁 Screenshots available in:
-screenshoot/view/
+# Results Analysis
 
-7. Results Analysis
-Descriptive Analysis
+### Descriptive Analysis
+The results show different customer purchasing patterns.  
+Some customers consistently generate higher sales quantities over time.
 
-The results show varying customer purchasing patterns, with some customers consistently contributing higher sales quantities. Running totals highlight cumulative growth over time.
+### Diagnostic Analysis
+Higher-ranked customers tend to purchase more frequently and in larger quantities.
 
-Diagnostic Analysis
+### Prescriptive Analysis
+The business should:
+- Reward high-performing customers with loyalty programs  
+- Re-engage low-activity customers using targeted promotions  
+- Use sales trends for inventory and marketing planning  
 
-Higher-ranked customers tend to make frequent purchases and larger transactions. Variations in sales performance are influenced by purchase timing and customer behavior.
+---
 
-Prescriptive Analysis
+# Key Insights
+- Window functions enable advanced analytics without complex subqueries  
+- JOINs expose hidden relationships and inactive records  
+- Views improve query reusability and reporting efficiency  
 
-The business should prioritize high-performing customers through loyalty programs and use targeted promotions to re-engage low-activity customers. Sales trends should inform inventory and marketing strategies.
+---
 
-8. Key Insights
+## References
+- PostgreSQL Official Documentation  
+- SQL Window Functions Tutorials  
+- Course lecture materials  
 
-Window functions provide powerful analytical capabilities without complex subqueries
+---
 
-JOINs reveal hidden relationships and inactive records
-
-Views improve query reusability and reporting efficiency
-
-9. References
-
-PostgreSQL Official Documentation
-
-SQL Window Functions Tutorials
-
-Course lecture materials
-
-10. Integrity Statement
-
-All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation
+# Integrity Statement
+This project represents original academic work.  
+AI tools were used only as a learning aid and all implementations were understood, adapted, and executed by the student.
