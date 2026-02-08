@@ -166,6 +166,6 @@ The business should:
 
 ---
 
-# Integrity Statement
-This project represents original academic work. am not gone lie  
-AI tools were used only as a learning aid and all implementations were understood, adapted, and executed by student(me).
+## Integrity Statement
+All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation.
+
