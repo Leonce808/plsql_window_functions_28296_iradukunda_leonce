@@ -70,7 +70,7 @@ Primary and foreign keys enforce referential integrity between the tables.
 The ER diagram illustrates the relationships between customers, products, and sales.
 
 📁 ER diagram image available in:  
-`screenshots/setup/`
+`screenshots/setup/`erd_diagrm.png
 
 ---
 
@@ -168,4 +168,4 @@ The business should:
 
 # Integrity Statement
 This project represents original academic work. am not gone lie  
-AI tools were used only as a learning aid and all implementations were understood, adapted, and executed by me(student).
+AI tools were used only as a learning aid and all implementations were understood, adapted, and executed by student(me).
